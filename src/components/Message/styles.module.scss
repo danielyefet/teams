@@ -1,0 +1,24 @@
+.Message {
+    align-self: flex-end;
+    background-color: #3A3B55;
+    border-radius: 2px;
+    color: #f7f7f7;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0 0 16px 0;
+    padding: 8px 16px;
+}
+
+.received {
+    background-color: #2D2C2C;
+    align-self: flex-start;
+}
+
+.name {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.body {
+    font-size: 14px;
+}
