@@ -1,5 +1,8 @@
 {
     "extends": ["airbnb", "airbnb/hooks"],
+    "globals": {
+        "FormData": true
+    },
     "rules": {
         "react/jsx-props-no-spreading": "off",
         "react/prop-types": "off"

@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import Layout from '../components/Layout';
 import ChatWindow from '../components/ChatWindow';
 import Message from '../components/Message';
+import UserInput from '../components/UserInput';
 
 function Homepage() {
+  const [messages, setMessages] = useState([]);
+
+  function handleSubmit(message) {
+    setMessages([...messages, message]);
+  }
+
   return (
-    <ChatWindow>
-      <Message name="Dan" body="Hello there, how are you?!" />
-      <Message name="Another Person" body="Not too baaaad!" received />
-      <Message name="Dan" body="Great!" />
-    </ChatWindow>
+    <Layout>
+      <UserInput onSubmit={handleSubmit} />
+      <ChatWindow>
+        {messages.map(({
+          timestamp, name, body, received,
+        }) => (
+          <Message key={timestamp} name={name} body={body} received={received} />
+        ))}
+      </ChatWindow>
+    </Layout>
   );
 }
 

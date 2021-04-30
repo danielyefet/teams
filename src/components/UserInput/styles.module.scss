@@ -1,0 +1,17 @@
+.UserInput {
+    padding: 20px;
+    background: #3a3a3a linear-gradient(180deg, rgb(255 255 255 / 20%), transparent);
+}
+
+.input {
+    margin: 0 10px 0 0;
+    background: linear-gradient(180deg, transparent, rgb(255 255 255 / 8%));
+    border-radius: 10px;
+    border: 0;
+    border-bottom: solid rgb(255 255 255 / 27%) 1px;
+    border-top: solid rgb(0 0 0 / 58%) 1px;
+    padding: 5px 10px;
+    color: #ffffff;
+    outline: none;
+}
+
