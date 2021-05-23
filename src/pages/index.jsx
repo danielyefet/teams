@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import Layout from '../components/Layout';
 import ChatWindow from '../components/ChatWindow';
 import Message from '../components/Message';
 import UserInput from '../components/UserInput';
@@ -13,7 +12,7 @@ function Homepage() {
   }
 
   return (
-    <Layout>
+    <>
       <UserInput onSubmit={handleSubmit} />
       <ChatWindow>
         {messages.map(({
@@ -22,7 +21,7 @@ function Homepage() {
           <Message key={timestamp} name={name} body={body} received={received} />
         ))}
       </ChatWindow>
-    </Layout>
+    </>
   );
 }
 
