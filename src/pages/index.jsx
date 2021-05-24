@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import { toJpeg } from 'html-to-image';
 
 import ChatWindow from '../components/ChatWindow';
 import Message from '../components/Message';
@@ -6,15 +7,25 @@ import UserInput from '../components/UserInput';
 
 function Homepage() {
   const [messages, setMessages] = useState([]);
+  const chatWindowRef = useRef(null);
 
   function handleSubmit(message) {
     setMessages([...messages, message]);
   }
 
+  async function handleCameraClick() {
+    const dataUrl = await toJpeg(chatWindowRef.current, { quality: 100 });
+
+    const link = document.createElement('a');
+    link.download = 'teams.jpg';
+    link.href = dataUrl;
+    link.click();
+  }
+
   return (
     <>
-      <UserInput onSubmit={handleSubmit} />
-      <ChatWindow>
+      <UserInput onSubmit={handleSubmit} onCameraClick={handleCameraClick} />
+      <ChatWindow ref={chatWindowRef}>
         {messages.map(({
           timestamp, name, body, received,
         }) => (

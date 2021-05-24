@@ -2,12 +2,10 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-function ChatWindow({ children }) {
-  return (
-    <section className={styles.ChatWindow}>
-      {children}
-    </section>
-  );
-}
+const ChatWindow = React.forwardRef(({ children }, ref) => (
+  <section ref={ref} className={styles.ChatWindow}>
+    {children}
+  </section>
+));
 
 export default ChatWindow;
