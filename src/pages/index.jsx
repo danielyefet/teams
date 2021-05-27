@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Head from 'next/head';
 
 import ChatWindow from '../components/ChatWindow';
 import Message from '../components/Message';
@@ -13,6 +14,10 @@ function Homepage() {
 
   return (
     <>
+      <Head>
+        <title>MS Teams Chat Generator</title>
+        <meta name="description" content="It's a Microsoft Teams chat generator." />
+      </Head>
       <UserInput onSubmit={handleSubmit} />
       <ChatWindow>
         {messages.map(({
