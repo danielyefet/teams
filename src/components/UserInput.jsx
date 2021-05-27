@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
-const styles = {
-  input: 'bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500',
-};
+import Input from './Input';
 
 function UserInput({ onSubmit = () => {}, onCameraClick = () => {} }) {
   const [inputValues, setInputValues] = useState({
@@ -36,22 +34,8 @@ function UserInput({ onSubmit = () => {}, onCameraClick = () => {} }) {
 
   return (
     <form onSubmit={handleSubmit} className="pb-2 md:flex md:items-center p-2">
-      <input
-        className={`${styles.input} mb-2 md:mb-0 md:mr-2`}
-        id="name"
-        onChange={handleChange}
-        placeholder="Name..."
-        type="text"
-        value={inputValues.name}
-      />
-      <input
-        className={`${styles.input} mb-2 md:mb-0 md:mr-2`}
-        id="body"
-        onChange={handleChange}
-        placeholder="Message..."
-        type="text"
-        value={inputValues.body}
-      />
+      <Input id="name" value={inputValues.name} onChange={handleChange} placeholder="Name..." />
+      <Input id="body" value={inputValues.body} onChange={handleChange} placeholder="Message..." />
       <div className="flex items-center justify-end">
         <div className="flex items-center mr-2">
           <button
