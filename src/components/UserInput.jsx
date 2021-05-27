@@ -34,8 +34,8 @@ function UserInput({ onSubmit = () => {}, onCameraClick = () => {} }) {
 
   return (
     <form onSubmit={handleSubmit} className="pb-2 md:flex md:items-center p-2">
-      <Input id="name" value={inputValues.name} onChange={handleChange} placeholder="Name..." />
-      <Input id="body" value={inputValues.body} onChange={handleChange} placeholder="Message..." />
+      <Input className="mb-2 md:mb-0 md:mr-2" id="name" value={inputValues.name} onChange={handleChange} placeholder="Name..." />
+      <Input className="mb-2 md:mb-0 md:mr-2" id="body" value={inputValues.body} onChange={handleChange} placeholder="Message..." />
       <div className="flex items-center justify-end">
         <div className="flex items-center mr-2">
           <button
