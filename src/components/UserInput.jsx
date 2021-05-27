@@ -4,7 +4,7 @@ const styles = {
   input: 'bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500',
 };
 
-function UserInput({ onSubmit }) {
+function UserInput({ onSubmit = () => {}, onCameraClick = () => {} }) {
   const [inputValues, setInputValues] = useState({
     name: '',
     body: '',
@@ -35,7 +35,7 @@ function UserInput({ onSubmit }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="pb-2 md:flex md:items-center">
+    <form onSubmit={handleSubmit} className="pb-2 md:flex md:items-center p-2">
       <input
         className={`${styles.input} mb-2 md:mb-0 md:mr-2`}
         id="name"
@@ -53,23 +53,20 @@ function UserInput({ onSubmit }) {
         value={inputValues.body}
       />
       <div className="flex items-center justify-end">
-        <button
-          className="mr-2 w-20 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 rounded"
-          type="submit"
-        >
-          {inputValues.received ? 'Recieve' : 'Send'}
-
-        </button>
-        <svg
-          className="w-6 h-6 cursor-pointer"
-          fill="none"
-          id="received"
-          onClick={handleChange}
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+        <div className="flex items-center mr-2">
+          <button
+            className="mr-1 w-20 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 rounded"
+            type="submit"
+          >
+            {inputValues.received ? 'Recieve' : 'Send'}
+          </button>
+          <svg id="received" onClick={handleChange} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 cursor-pointer fill-current text-purple-500 hover:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+          </svg>
+        </div>
+        <svg onClick={onCameraClick} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       </div>
     </form>
