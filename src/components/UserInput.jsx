@@ -58,7 +58,7 @@ function UserInput({ onSubmit = () => {}, onCameraClick = () => {} }) {
             className="mr-1 w-20 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 rounded"
             type="submit"
           >
-            {inputValues.received ? 'Recieve' : 'Send'}
+            {inputValues.received ? 'Receive' : 'Send'}
           </button>
           <svg id="received" onClick={handleChange} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 cursor-pointer fill-current text-purple-500 hover:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
