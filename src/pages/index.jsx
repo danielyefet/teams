@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import Head from 'next/head';
 import { toJpeg } from 'html-to-image';
 
 import ChatWindow from '../components/ChatWindow';
 import Message from '../components/Message';
-import UserInput from '../components/UserInput';
+import Header from '../components/Header';
 
 function Homepage() {
   const [messages, setMessages] = useState([]);
@@ -29,7 +29,7 @@ function Homepage() {
         <title>MS Teams Chat Generator</title>
         <meta name="description" content="It's a Microsoft Teams chat generator." />
       </Head>
-      <UserInput onSubmit={handleSubmit} onCameraClick={handleCameraClick} />
+      <Header onSubmit={handleSubmit} onCameraClick={handleCameraClick} />
       <ChatWindow ref={chatWindowRef}>
         {messages.map(({
           timestamp, name, body, received,
