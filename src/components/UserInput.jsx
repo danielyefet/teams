@@ -34,9 +34,9 @@ function UserInput({ onSubmit = () => {} }) {
 
   return (
     <form onSubmit={handleSubmit} className="sm:flex sm:items-center">
-      <Input className="mb-2 w-full sm:mr-2 sm:w-52" id="name" value={inputValues.name} onChange={handleChange} placeholder="Name..." />
+      <Input className="mb-2 sm:mr-2 sm:w-52" id="name" value={inputValues.name} onChange={handleChange} placeholder="Name..." />
       <div className="flex items-center mb-2 flex-grow">
-        <Input className="mr-2 w-full" id="body" value={inputValues.body} onChange={handleChange} placeholder="Message..." />
+        <Input className="mr-2" id="body" value={inputValues.body} onChange={handleChange} placeholder="Message..." />
         <div className="flex items-center justify-end">
           <div className="flex items-center">
             <button
