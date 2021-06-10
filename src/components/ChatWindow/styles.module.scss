@@ -1,6 +1,10 @@
 .ChatWindow {
-    background-color: #201F1F;
+    background-color: #F5F5F5;
     display: flex;
     flex-direction: column;
     padding: 16px 16px 0 16px;
+}
+
+.darkMode {
+    background-color: #201F1F;
 }

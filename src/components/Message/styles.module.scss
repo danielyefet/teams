@@ -1,16 +1,25 @@
 .Message {
     align-self: flex-end;
-    background-color: #3A3B55;
+    background-color: #EAEAF6;
     border-radius: 2px;
-    color: #f7f7f7;
+    color: #68686f;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0 0 16px 0;
     padding: 8px 16px;
 }
 
+.darkMode {
+    background-color: #3A3B55;
+    color: #f7f7f7;
+}
+
 .received {
-    background-color: #2D2C2C;
+    background-color: #FFFFFF;
     align-self: flex-start;
+}
+
+.received.darkMode {
+    background-color: #2D2C2C;
 }
 
 .name {

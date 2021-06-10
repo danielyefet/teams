@@ -8,6 +8,7 @@ import Header from '../components/Header';
 
 function Homepage() {
   const [messages, setMessages] = useState([]);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const chatWindowRef = useRef(null);
 
   function handleSubmit(message) {
@@ -29,12 +30,17 @@ function Homepage() {
         <title>MS Teams Chat Generator</title>
         <meta name="description" content="It's a Microsoft Teams chat generator." />
       </Head>
-      <Header onSubmit={handleSubmit} onCameraClick={handleCameraClick} />
-      <ChatWindow ref={chatWindowRef}>
+      <Header
+        toggleIsOn={isDarkMode}
+        onSubmit={handleSubmit}
+        onCameraClick={handleCameraClick}
+        onDarkModeToggle={setIsDarkMode}
+      />
+      <ChatWindow darkMode={isDarkMode} ref={chatWindowRef}>
         {messages.map(({
           timestamp, name, body, received,
         }) => (
-          <Message key={timestamp} name={name} body={body} received={received} />
+          <Message key={timestamp} darkMode={isDarkMode} name={name} body={body} received={received} />
         ))}
       </ChatWindow>
     </>
