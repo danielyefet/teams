@@ -1,11 +1,45 @@
+$border-radious: 2px;
+
 .Message {
     align-self: flex-end;
     background-color: #EAEAF6;
-    border-radius: 2px;
+    border-radius: $border-radious;
     color: #68686f;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0 0 16px 0;
     padding: 8px 16px;
+    position: relative;
+}
+
+.Message:hover .options {
+    opacity: 1;
+}
+
+$optionsColour: #fd5757;
+
+.options {
+    opacity: 0;
+    transition: all ease-out .2s;
+    position: absolute;
+    border-radius: $border-radious;
+    border: 1px solid $optionsColour;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.removeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: $border-radious;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    background-color: $optionsColour;
 }
 
 .darkMode {
