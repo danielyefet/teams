@@ -3,6 +3,9 @@ import styles from './styles.module.scss';
 function Message({
   body = '', timestamp = '', darkMode = false, name = '', received = false, onRemove = () => {},
 }) {
+  const date = new Date(timestamp);
+  const formatedTimestamp = `${date.getHours()}:${date.getMinutes()}`;
+
   function handleButtonClick() {
     onRemove(timestamp);
   }
@@ -17,7 +20,11 @@ function Message({
             </svg>
           </button>
         </div>
-        <p className={styles.name}>{name}</p>
+        <p className={styles.header}>
+          {name && <span className={styles.name}>{name}</span>}
+          {' '}
+          <span className={styles.timestamp}>{formatedTimestamp}</span>
+        </p>
         <p className={styles.body}>{body}</p>
       </div>
     </>
