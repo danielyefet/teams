@@ -31,7 +31,7 @@ function Homepage() {
   return (
     <>
       <Head>
-        <title>MS Teams Chat Generator</title>
+        <title>Microsoft Teams Chat Generator</title>
         <meta name="description" content="It's a Microsoft Teams chat generator." />
       </Head>
       <Header
