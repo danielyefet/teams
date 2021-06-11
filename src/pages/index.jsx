@@ -15,7 +15,7 @@ function Homepage() {
     setMessages([...messages, message]);
   }
 
-  async function handleCameraClick() {
+  async function handleDownload() {
     const dataUrl = await toJpeg(chatWindowRef.current, { quality: 100 });
 
     const link = document.createElement('a');
@@ -37,7 +37,7 @@ function Homepage() {
       <Header
         toggleIsOn={isDarkMode}
         onSubmit={handleSubmit}
-        onCameraClick={handleCameraClick}
+        onDownload={handleDownload}
         onDarkModeToggle={setIsDarkMode}
       />
       <ChatWindow darkMode={isDarkMode} ref={chatWindowRef}>

@@ -23,7 +23,7 @@ function Toggle({ on = false, onToggle = () => {} }) {
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onClick={handleClick}
-      className={`cursor-pointer w-11 h-5 bg-purple-600 hover:bg-purple-500 rounded-full relative px-1.5 flex items-center${isOn ? '' : ' justify-end'}`}
+      className={`focus:outline-none cursor-pointer w-11 h-5 bg-blue-500 hover:bg-blue-400 rounded-full relative px-1.5 flex items-center${isOn ? '' : ' justify-end'}`}
     >
       <div className={`w-4 h-4 rounded-full absolute transform duration-200 ease-out bg-white left-0.5 ${isOn ? 'translate-x-6' : 'translate-x-0'}`} />
       {isOn ? (

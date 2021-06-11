@@ -2,15 +2,37 @@ import UserInput from './UserInput';
 import Toggle from './Toggle';
 
 function Header({
-  onSubmit = () => {}, onCameraClick = () => {}, onDarkModeToggle = () => {}, toggleIsOn = false,
+  onSubmit = () => {}, onDownload = () => {}, onDarkModeToggle = () => {}, toggleIsOn = false,
 }) {
+  function handleSend(message) {
+    onSubmit({
+      ...message,
+      received: false,
+    });
+  }
+
+  function handleReceive(message) {
+    onSubmit({
+      ...message,
+      received: true,
+    });
+  }
+
   return (
     <>
-      <UserInput onSubmit={onSubmit} />
-      <div className="flex items-center pb-2">
-        <svg onClick={onCameraClick} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 cursor-pointer text-purple-600 hover:text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+      <div className="divide-y divide-dashed divide-gray-300">
+        <UserInput onSubmit={handleSend} cta="Send" />
+        <UserInput className="pt-2" onSubmit={handleReceive} cta="Receive" />
+      </div>
+      <div style={{ backgroundColor: toggleIsOn ? '#201F1F' : '#F5F5F5' }} className="flex items-center justify-end p-4">
+        <svg
+          onClick={onDownload}
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 mr-2 cursor-pointer text-blue-500 hover:text-blue-400"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
         </svg>
         <Toggle on={toggleIsOn} onToggle={onDarkModeToggle} />
       </div>
