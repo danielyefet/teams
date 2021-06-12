@@ -1,10 +1,16 @@
 import styles from './styles.module.scss';
 
+function useLeadingZero(value) {
+  return /^\d$/.test(value) ? `0${value}` : `${value}`;
+}
+
 function Message({
   body = '', timestamp = '', darkMode = false, name = '', received = false, onRemove = () => {},
 }) {
   const date = new Date(timestamp);
-  const formatedTimestamp = `${date.getHours()}:${date.getMinutes()}`;
+  const hours = useLeadingZero(date.getHours());
+  const minutes = useLeadingZero(date.getMinutes());
+  const formatedTimestamp = `${hours}:${minutes}`;
 
   function handleButtonClick() {
     onRemove(timestamp);
