@@ -12,7 +12,12 @@ function Homepage() {
   const chatWindowRef = useRef(null);
 
   function handleSubmit(message) {
-    setMessages([...messages, message]);
+    const previousMessage = messages[messages.length - 1] || {};
+
+    setMessages([...messages, {
+      ...message,
+      isContinuation: previousMessage.name === message.name,
+    }]);
   }
 
   async function handleDownload() {
@@ -42,10 +47,11 @@ function Homepage() {
       />
       <ChatWindow darkMode={isDarkMode} ref={chatWindowRef}>
         {messages.map(({
-          timestamp, name, body, received,
+          isContinuation, timestamp, name, body, received,
         }) => (
           <Message
             key={timestamp}
+            isContinuation={isContinuation}
             timestamp={timestamp}
             onRemove={handleRemoveMessage}
             darkMode={isDarkMode}

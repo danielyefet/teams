@@ -6,7 +6,7 @@ $border-radious: 2px;
     border-radius: $border-radious;
     color: #68686f;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0 0 16px 0;
+    margin: 16px 0 0 0;
     padding: 8px 16px;
     position: relative;
     max-width: 85%;
@@ -32,6 +32,10 @@ $border-radious: 2px;
     &.received {
         background-color: #FFFFFF;
         align-self: flex-start;
+    }
+
+    &.continuation {
+        margin-top: 5px;
     }
 }
 

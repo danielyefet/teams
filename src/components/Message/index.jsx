@@ -5,7 +5,7 @@ function useLeadingZero(value) {
 }
 
 function Message({
-  body = '', timestamp = '', darkMode = false, name = '', received = false, onRemove = () => {},
+  body = '', isContinuation = false, timestamp = '', darkMode = false, name = '', received = false, onRemove = () => {},
 }) {
   const date = new Date(timestamp);
   const hours = useLeadingZero(date.getHours());
@@ -18,7 +18,7 @@ function Message({
 
   return (
     <>
-      <div className={`${styles.Message}${received ? ` ${styles.received}` : ''}${darkMode ? ` ${styles.darkMode}` : ''}`}>
+      <div className={`${styles.Message}${received ? ` ${styles.received}` : ''}${darkMode ? ` ${styles.darkMode}` : ''}${isContinuation ? ` ${styles.continuation}` : ''}`}>
         <div className={styles.options}>
           <button type="button" onClick={handleButtonClick} className={styles.removeButton}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="white">
@@ -26,11 +26,13 @@ function Message({
             </svg>
           </button>
         </div>
-        <p className={styles.header}>
-          {name && <span className={styles.name}>{name}</span>}
-          {' '}
-          <span className={styles.timestamp}>{formatedTimestamp}</span>
-        </p>
+        {!isContinuation && (
+          <p className={styles.header}>
+            {name && <span className={styles.name}>{name}</span>}
+            {' '}
+            <span className={styles.timestamp}>{formatedTimestamp}</span>
+          </p>
+        )}
         <p className={styles.body}>{body}</p>
       </div>
     </>
