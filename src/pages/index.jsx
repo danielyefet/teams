@@ -47,17 +47,18 @@ function Homepage() {
       />
       <ChatWindow darkMode={isDarkMode} ref={chatWindowRef}>
         {messages.map(({
-          isContinuation, timestamp, name, body, received,
+          avatar, body, isContinuation, name, received, timestamp,
         }) => (
           <Message
-            key={timestamp}
-            isContinuation={isContinuation}
-            timestamp={timestamp}
-            onRemove={handleRemoveMessage}
-            darkMode={isDarkMode}
-            name={name}
+            avatar={avatar}
             body={body}
+            darkMode={isDarkMode}
+            isContinuation={isContinuation}
+            key={timestamp}
+            name={name}
+            onRemove={handleRemoveMessage}
             received={received}
+            timestamp={timestamp}
           />
         ))}
       </ChatWindow>

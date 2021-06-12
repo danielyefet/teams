@@ -1,12 +1,17 @@
-import UserInput from './UserInput';
+import { useState } from 'react';
 import Toggle from './Toggle';
+import Person from './Person';
 
 function Header({
   onSubmit = () => {}, onDownload = () => {}, onDarkModeToggle = () => {}, toggleIsOn = false,
 }) {
+  const [sendAvatar, setSendAvatar] = useState();
+  const [receiveAvatar, setReceiveAvatar] = useState();
+
   function handleSend(message) {
     onSubmit({
       ...message,
+      avatar: sendAvatar,
       received: false,
     });
   }
@@ -14,6 +19,7 @@ function Header({
   function handleReceive(message) {
     onSubmit({
       ...message,
+      avatar: receiveAvatar,
       received: true,
     });
   }
@@ -21,8 +27,8 @@ function Header({
   return (
     <>
       <div className="divide-y divide-dashed divide-gray-300">
-        <UserInput onSubmit={handleSend} cta="Send" />
-        <UserInput className="pt-2" onSubmit={handleReceive} cta="Receive" />
+        <Person id="person-1" onAvatarUpload={setSendAvatar} onMessage={handleSend} className="mb-2" />
+        <Person id="person-2" onAvatarUpload={setReceiveAvatar} onMessage={handleReceive} className="mb-2 pt-2" cta="Receive" />
       </div>
       <div style={{ backgroundColor: toggleIsOn ? '#201F1F' : '#F5F5F5' }} className="flex items-center justify-end p-4">
         <svg

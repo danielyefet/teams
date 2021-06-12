@@ -31,13 +31,13 @@ function UserInput({ className = '', cta = 'Submit', onSubmit = () => {} }) {
 
   return (
     <form onSubmit={handleSubmit} className={`${className ? `${className} ` : ''}sm:flex sm:items-center`}>
-      <Input className="mb-2 sm:mr-2 sm:w-52" name="name" value={inputValues.name} onChange={handleChange} placeholder="Name" />
-      <div className="flex items-center mb-2 flex-grow">
+      <Input className="mb-2 sm:mr-2 sm:w-52 sm:mb-0" name="name" value={inputValues.name} onChange={handleChange} placeholder="Name" />
+      <div className="flex items-center flex-grow">
         <Input className="mr-2" name="body" value={inputValues.body} onChange={handleChange} placeholder="Message" />
         <div className="flex items-center justify-end">
           <div className="flex items-center">
             <button
-              className="mr-1 w-20 shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 rounded"
+              className="w-20 shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 rounded"
               type="submit"
             >
               {cta}
