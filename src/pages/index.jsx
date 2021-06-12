@@ -44,7 +44,15 @@ function Homepage() {
         {messages.map(({
           timestamp, name, body, received,
         }) => (
-          <Message key={timestamp} timestamp={timestamp} onRemove={handleRemoveMessage} darkMode={isDarkMode} name={name} body={body} received={received} />
+          <Message
+            key={timestamp}
+            timestamp={timestamp}
+            onRemove={handleRemoveMessage}
+            darkMode={isDarkMode}
+            name={name}
+            body={body}
+            received={received}
+          />
         ))}
       </ChatWindow>
     </>
