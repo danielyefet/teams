@@ -1,3 +1,5 @@
+import RichFormat from './RichFormat';
+
 function useLeadingZero(value) {
   return /^\d$/.test(value) ? `0${value}` : `${value}`;
 }
@@ -57,7 +59,7 @@ function Message({
           <span className="font-normal">{formatedTimestamp}</span>
         </p>
         )}
-        <p className="text-sm break-words">{body}</p>
+        <p className="text-sm break-words"><RichFormat text={body} /></p>
       </div>
       {avatar && !isContinuation && (
         <div className="relative">
