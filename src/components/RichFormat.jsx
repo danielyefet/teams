@@ -1,7 +1,7 @@
 function RichFormat({ text }) {
   const pattern = /@[\w\d]+/g;
-  const specialStrings = text.match(pattern);
-  const regularStrings = text.split(pattern);
+  const specialStrings = text.match(pattern) || [];
+  const regularStrings = text.split(pattern) || [];
   const jsx = [];
 
   const specialElements = specialStrings.map((specialString) => (
