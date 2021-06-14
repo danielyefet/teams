@@ -3,7 +3,7 @@
         "source.fixAll.eslint": true,
         "source.fixAll.stylelint": true
     },
-    "files.eol": "\r\n",
+    "files.eol": "\n",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true
 }
