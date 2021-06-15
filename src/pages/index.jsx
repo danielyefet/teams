@@ -37,7 +37,7 @@ function Homepage() {
   return (
     <>
       <Head>
-        <title>TeamsMemes | Microsoft Teams Meme Creator</title>
+        <title>TeamsMemes | Microsoft Teams Chat Meme Creator</title>
         <meta name="description" content="Fake Microsoft Teams chat generator." />
       </Head>
       <Header onSubmit={handleSubmit} />
