@@ -19,6 +19,7 @@ function Toggle({ on = false, onToggle = () => {} }) {
   return (
     <div
       role="checkbox"
+      aria-label="Dark mode toggle"
       aria-checked={isOn ? 'true' : 'false'}
       tabIndex={0}
       onKeyDown={handleKeyDown}

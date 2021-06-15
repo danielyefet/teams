@@ -18,9 +18,9 @@ const icons = [
 
 function SocialIcons({ className }) {
   return (
-    <div className={`${className ? `${className} ` : ''}h-9 flex items-center p-2`}>
+    <div className={`${className ? `${className} ` : ''}h-11 flex items-center p-2`}>
       {icons.map(({ name, path, url }) => (
-        <a key={name} className="h-full mr-1.5 last:mr-0 text-gray-200 hover:text-gray-300" href={url} rel="noreferrer" target="_blank">
+        <a key={name} aria-label={name} className="h-full mr-1.5 last:mr-0 text-gray-200 hover:text-gray-300" href={url} rel="noreferrer" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-full" viewBox="0 0 24 24" fill="currentColor">
             <path d={path} />
           </svg>

@@ -31,8 +31,10 @@ export default function MyApp({ Component, pageProps }) {
           <p className="text-teams-purple font-bold">TeamsMemes</p>
         </a>
       </header>
-      <Component {...pageProps} />
-      <SocialIcons className="mt-2" />
+      <main>
+        <Component {...pageProps} />
+      </main>
+      <SocialIcons className="mt-4" />
     </div>
   );
 }

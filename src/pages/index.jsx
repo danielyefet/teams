@@ -5,6 +5,7 @@ import { toJpeg } from 'html-to-image';
 import ChatWindow from '../components/ChatWindow';
 import Message from '../components/Message';
 import Header from '../components/Header';
+import Controls from '../components/Controls';
 
 function Homepage() {
   const [messages, setMessages] = useState([]);
@@ -39,12 +40,8 @@ function Homepage() {
         <title>TeamsMemes | Microsoft Teams Meme Creator</title>
         <meta name="description" content="Fake Microsoft Teams chat generator." />
       </Head>
-      <Header
-        toggleIsOn={isDarkMode}
-        onSubmit={handleSubmit}
-        onDownload={handleDownload}
-        onDarkModeToggle={setIsDarkMode}
-      />
+      <Header onSubmit={handleSubmit} />
+      <Controls toggleIsOn={isDarkMode} onDarkModeToggle={setIsDarkMode} onDownload={handleDownload} />
       <ChatWindow darkMode={isDarkMode} ref={chatWindowRef}>
         {messages.map(({
           avatar, body, isContinuation, name, received, timestamp,
