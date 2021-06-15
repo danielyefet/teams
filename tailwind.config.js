@@ -17,6 +17,10 @@ module.exports = {
       '1/2': '50%',
       '3/4': '75%',
     },
+    screens: {
+      sm: '640px',
+      md: '768px',
+    },
   },
   variants: {
     extend: {},
