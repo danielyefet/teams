@@ -36,8 +36,8 @@ function Homepage() {
   return (
     <>
       <Head>
-        <title>Microsoft Teams Chat Generator</title>
-        <meta name="description" content="It's a Microsoft Teams chat generator." />
+        <title>TeamsMemes | Microsoft Teams Meme Creator</title>
+        <meta name="description" content="Fake Microsoft Teams chat generator." />
       </Head>
       <Header
         toggleIsOn={isDarkMode}
