@@ -4,6 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'teams-purple': '#6264A7',
+        'teams-purple-light': '#898bc5',
         'teams-bg-dark': '#201F1F',
         'teams-bg-light': '#F5F5F5',
         'teams-status-available': '#6BB800',

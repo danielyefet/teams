@@ -37,7 +37,7 @@ function UserInput({ className = '', cta = 'Submit', onSubmit = () => {} }) {
         <div className="flex items-center justify-end">
           <div className="flex items-center">
             <button
-              className="w-20 shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 rounded"
+              className="w-20 shadow bg-teams-purple hover:bg-teams-purple-light focus:shadow-outline focus:outline-none text-white font-bold py-2 rounded"
               type="submit"
             >
               {cta}

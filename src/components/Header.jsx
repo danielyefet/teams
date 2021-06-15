@@ -34,7 +34,7 @@ function Header({
         <svg
           onClick={onDownload}
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 mr-2 cursor-pointer text-blue-500 hover:text-blue-400"
+          className="h-5 w-5 mr-2 cursor-pointer text-teams-purple hover:text-teams-purple-light"
           viewBox="0 0 20 20"
           fill="currentColor"
         >

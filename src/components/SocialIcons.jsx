@@ -20,7 +20,7 @@ function SocialIcons() {
   return (
     <div className="h-9 flex items-center p-2 mt-2">
       {icons.map(({ name, path, url }) => (
-        <a key={name} className="h-full mr-1.5 last:mr-0 text-gray-200 hover:text-gray-400" href={url} rel="noreferrer" target="_blank">
+        <a key={name} className="h-full mr-1.5 last:mr-0 text-gray-200 hover:text-gray-300" href={url} rel="noreferrer" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-full" viewBox="0 0 24 24" fill="currentColor">
             <path d={path} />
           </svg>
