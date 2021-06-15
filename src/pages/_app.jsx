@@ -2,6 +2,7 @@
 import '../styles.scss';
 
 import Head from 'next/head';
+import SocialIcons from '../components/SocialIcons';
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -23,11 +24,7 @@ export default function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Component {...pageProps} />
-      <div className="h-9 flex items-center p-2 mt-2">
-        <a className="h-full mr-1.5" href="https://github.com/danielyefet/teams"><img className="h-full" src="/social-icons/github.svg" alt="GitHub" /></a>
-        <a className="h-full mr-1.5" href="https://twitter.com/danyefet"><img className="h-full" src="/social-icons/twitter.svg" alt="Twitter" /></a>
-        <a className="h-full" href="https://danielyefet.medium.com"><img className="h-full" src="/social-icons/medium.svg" alt="Medium" /></a>
-      </div>
+      <SocialIcons />
     </div>
   );
 }
