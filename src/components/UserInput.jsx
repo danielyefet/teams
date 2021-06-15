@@ -2,7 +2,9 @@ import { useState } from 'react';
 
 import Input from './Input';
 
-function UserInput({ className = '', cta = 'Submit', onSubmit = () => {} }) {
+function UserInput({
+  className = '', cta = 'Submit', messagePlaceholder = 'Message', onSubmit = () => {},
+}) {
   const [inputValues, setInputValues] = useState({
     name: '',
     body: '',
@@ -31,9 +33,9 @@ function UserInput({ className = '', cta = 'Submit', onSubmit = () => {} }) {
 
   return (
     <form onSubmit={handleSubmit} className={`${className ? `${className} ` : ''}sm:flex sm:items-center`}>
-      <Input className="mb-2 sm:mr-2 sm:w-52 sm:mb-0" name="name" value={inputValues.name} onChange={handleChange} placeholder="Name" />
+      <Input className="mb-2 sm:mr-2 sm:w-52 sm:mb-0" name="name" value={inputValues.name} onChange={handleChange} placeholder="Username" />
       <div className="flex items-center flex-grow">
-        <Input className="mr-2" name="body" value={inputValues.body} onChange={handleChange} placeholder="Message" />
+        <Input className="mr-2" name="body" value={inputValues.body} onChange={handleChange} placeholder={messagePlaceholder} />
         <div className="flex items-center justify-end">
           <div className="flex items-center">
             <button

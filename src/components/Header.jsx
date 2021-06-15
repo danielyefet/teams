@@ -27,8 +27,8 @@ function Header({
   return (
     <>
       <div className="divide-y divide-dashed divide-gray-200">
-        <Person id="person-1" onAvatarUpload={setSendAvatar} onMessage={handleSend} className="mb-2" />
-        <Person id="person-2" onAvatarUpload={setReceiveAvatar} onMessage={handleReceive} className="mb-4 pt-2" cta="Receive" />
+        <Person id="person-1" onAvatarUpload={setSendAvatar} messagePlaceholder="Outgoing message" onMessage={handleSend} className="mb-2" />
+        <Person id="person-2" onAvatarUpload={setReceiveAvatar} messagePlaceholder="Incoming message" onMessage={handleReceive} className="mb-4 pt-2" cta="Receive" />
       </div>
       <div style={{ backgroundColor: toggleIsOn ? '#201F1F' : '#F5F5F5' }} className="flex items-center justify-end p-4">
         <svg
