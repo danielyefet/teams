@@ -1,5 +1,7 @@
 module.exports = {
-  purge: ['./src/pages/**/*.{js,jsx}', './src/components/**/*.{js,jsx}'],
+  purge: {
+    content: ['./src/pages/**/*.{js,jsx}', './src/components/**/*.{js,jsx}'],
+  },
   darkMode: false,
   theme: {
     extend: {
@@ -18,10 +20,12 @@ module.exports = {
       '1/4': '25%',
       '1/2': '50%',
       '3/4': '75%',
-    },
-    screens: {
+      xs: '480px',
       sm: '640px',
       md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
     },
   },
   variants: {

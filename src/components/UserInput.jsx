@@ -37,14 +37,12 @@ function UserInput({
       <div className="flex items-center flex-grow">
         <Input className="mr-2" name="body" value={inputValues.body} onChange={handleChange} placeholder={messagePlaceholder} />
         <div className="flex items-center justify-end">
-          <div className="flex items-center">
-            <button
-              className="w-20 shadow bg-teams-purple hover:bg-teams-purple-light focus:shadow-outline focus:outline-none text-white font-bold py-2 rounded"
-              type="submit"
-            >
-              {cta}
-            </button>
-          </div>
+          <button
+            className="w-20 shadow bg-teams-purple hover:bg-teams-purple-light focus:shadow-outline focus:outline-none text-white font-bold py-2 rounded"
+            type="submit"
+          >
+            {cta}
+          </button>
         </div>
       </div>
     </form>

@@ -8,15 +8,16 @@
   },
   "dependencies": {
     "html-to-image": "^1.6.2",
-    "next": "^10.0.7",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "next": "^11.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "sass": "^1.32.8"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
     "eslint": "7.2.0",
     "eslint-config-airbnb": "18.2.1",
+    "eslint-config-next": "^11.0.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-react": "7.21.5",
