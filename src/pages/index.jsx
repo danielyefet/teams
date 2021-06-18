@@ -8,7 +8,7 @@ function Homepage() {
   return (
     <>
       <Head>
-        <title>TeamsMemes | Microsoft Teams Chat Meme Creator</title>
+        <title>TeamsMemes | Microsoft Teams chat meme creator</title>
         <meta name="description" content="Fake Microsoft Teams chat generator" />
       </Head>
       <div className="px-4 pt-4 sm:pt-8 flex flex-col items-center text-center">

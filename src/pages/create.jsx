@@ -38,8 +38,8 @@ function Homepage() {
   return (
     <>
       <Head>
-        <title>TeamsMemes | Microsoft Teams Chat Meme Creator</title>
-        <meta name="description" content="Fake Microsoft Teams chat generator." />
+        <title>TeamsMemes | Microsoft Teams conversation generator</title>
+        <meta name="description" content="Create your own Microsoft Teams conversation." />
       </Head>
       <div className="max-w-md mx-auto">
         <h1 className="mb-8 text-center text-gray-800 text-xl font-semibold">Ready, steady, chat!</h1>
