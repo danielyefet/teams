@@ -1,6 +1,6 @@
 module.exports = {
   purge: {
-    content: ['./src/pages/**/*.{js,jsx}', './src/components/**/*.{js,jsx}'],
+    content: ['./src/pages/**/*.jsx', './src/components/**/*.jsx'],
   },
   darkMode: false,
   theme: {
@@ -26,11 +26,15 @@ module.exports = {
       lg: '1024px',
       xl: '1280px',
       '2xl': '1536px',
+      meme: '640px',
     },
   },
   variants: {
     extend: {
+      backgroundColor: ['disabled'],
+      cursor: ['disabled'],
       margin: ['last'],
+      opacity: ['disabled'],
     },
   },
   plugins: [],
