@@ -10,7 +10,7 @@ function Meme() {
   const router = useRouter();
   const { id, folder } = router.query;
 
-  const image = `http://res.cloudinary.com/teamsmemes/image/upload/${folder}/${id}.jpg`;
+  const image = `https://res.cloudinary.com/teamsmemes/image/upload/${folder}/${id}.jpg`;
   const url = `https://www.teamsmemes.com/memes/${folder}/${id}`;
 
   function selectInputText() {
