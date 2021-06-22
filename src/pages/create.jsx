@@ -80,7 +80,7 @@ function Homepage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           </div>
-          <ChatWindow darkMode={isDarkMode} ref={chatWindowRef}>
+          <ChatWindow photomode={isCreating} darkMode={isDarkMode} ref={chatWindowRef}>
             {messages.map(({
               avatar, body, isContinuation, name, received, timestamp,
             }) => (

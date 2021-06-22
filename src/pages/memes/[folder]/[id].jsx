@@ -30,9 +30,10 @@ function Meme() {
   return (
     <>
       <Head>
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="photo" />
         <meta name="twitter:title" content="TeamsMemes" />
         <meta name="twitter:image" content={image} />
+        <meta name="twitter:url" content={url} />
       </Head>
       <div className="flex justify-center mb-4">
         <div className="w-72 h-11 flex relative mr-2">
