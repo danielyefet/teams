@@ -1,15 +1,13 @@
 import { useRouter } from 'next/router';
-import Head from 'next/head';
 import { useRef, useState } from 'react';
 import Input from '../../../components/Input';
 
 function Meme() {
   const inputRef = useRef(null);
   const [isCopied, setIsCopied] = useState(false);
-
   const router = useRouter();
-  const { id, folder } = router.query;
 
+  const { id, folder } = router.query;
   const image = `https://res.cloudinary.com/teamsmemes/image/upload/${folder}/${id}.jpg`;
   const url = `https://www.teamsmemes.com/memes/${folder}/${id}`;
 
@@ -29,12 +27,6 @@ function Meme() {
 
   return (
     <>
-      <Head>
-        <meta name="twitter:card" content="photo" />
-        <meta name="twitter:title" content="TeamsMemes" />
-        <meta name="twitter:image" content={image} />
-        <meta name="twitter:url" content={url} />
-      </Head>
       <div className="flex justify-center mb-4">
         <div className="w-72 h-11 flex relative mr-2">
           <Input
