@@ -40,6 +40,7 @@ function Homepage() {
   }
 
   async function handleDownloadClick() {
+    gtag('event', 'download');
     const image = await createImage();
     const link = document.createElement('a');
     link.href = image;
@@ -48,6 +49,7 @@ function Homepage() {
   }
 
   async function handlePublishClick() {
+    gtag('event', 'publish');
     setIsPublishing(true);
 
     const image = await createImage();

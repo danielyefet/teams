@@ -73,6 +73,7 @@ function Meme({ query }) {
           aria-label="Twitter"
           className="bg-twitter p-3 h-11 text-white rounded"
           href={`https://twitter.com/intent/tweet?url=${url}&text=I did a funny!&via=teams_memes&hashtags=teamsmemes`}
+          onClick={() => gtag('event', 'tweet')}
           rel="noreferrer"
           target="_blank"
         >

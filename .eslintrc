@@ -5,6 +5,7 @@
         "fetch": true,
         "FormData": true,
         "window": true,
+        "gtag": true
     },
     "rules": {
         "react/react-in-jsx-scope": "off",
