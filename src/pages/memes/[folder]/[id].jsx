@@ -33,7 +33,12 @@ function Meme({ query }) {
         <meta name="twitter:description" content="Microsoft Teams chat generator" />
         <meta name="twitter:image" content={image} />
       </Head>
-      <div className="flex justify-center mb-4">
+      <img
+        className="mx-auto w-full max-w-meme block"
+        src={image}
+        alt={`TeamsMemes - ${id}`}
+      />
+      <div className="flex justify-center mt-4">
         <div className="w-72 h-11 flex relative mr-2">
           <Input
             ref={inputRef}
@@ -76,11 +81,6 @@ function Meme({ query }) {
           </svg>
         </a>
       </div>
-      <img
-        className="mx-auto w-full max-w-meme block"
-        src={image}
-        alt={`TeamsMemes - ${id}`}
-      />
     </>
   );
 }
