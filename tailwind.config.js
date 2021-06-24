@@ -11,6 +11,7 @@ module.exports = {
         'teams-bg-dark': '#201F1F',
         'teams-bg-light': '#F5F5F5',
         'teams-status-available': '#6BB800',
+        twitter: '#1DA1F2',
       },
     },
     fontFamily: {
