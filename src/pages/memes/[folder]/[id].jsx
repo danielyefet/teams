@@ -1,13 +1,11 @@
-import { useRouter } from 'next/router';
 import { useRef, useState } from 'react';
 import Input from '../../../components/Input';
 
-function Meme() {
+function Meme({ query }) {
   const inputRef = useRef(null);
   const [isCopied, setIsCopied] = useState(false);
-  const router = useRouter();
 
-  const { id, folder } = router.query;
+  const { id, folder } = query;
   const image = `https://res.cloudinary.com/teamsmemes/image/upload/${folder}/${id}.jpg`;
   const url = `https://www.teamsmemes.com/memes/${folder}/${id}`;
 
@@ -62,10 +60,18 @@ function Meme() {
       <img
         className="mx-auto w-full max-w-meme block"
         src={image}
-        alt="meme"
+        alt={`TeamsMemes - ${id}`}
       />
     </>
   );
 }
 
 export default Meme;
+
+export function getServerSideProps({ query }) {
+  return {
+    props: {
+      query,
+    },
+  };
+}
