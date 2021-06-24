@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import Head from 'next/head';
 import Input from '../../../components/Input';
 
 function Meme({ query }) {
@@ -25,6 +26,13 @@ function Meme({ query }) {
 
   return (
     <>
+      <Head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@teams_memes" />
+        <meta name="twitter:title" content="TeamsMemes" />
+        <meta name="twitter:description" content="Microsoft Teams chat generator" />
+        <meta name="twitter:image" content={image} />
+      </Head>
       <div className="flex justify-center mb-4">
         <div className="w-72 h-11 flex relative mr-2">
           <Input
