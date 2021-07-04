@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import SocialIcons from '../components/SocialIcons';
 
-export default function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <div className="container mx-auto p-4 max-w-screen-lg min-h-screen flex flex-col">
       <Head>
@@ -41,3 +41,5 @@ export default function MyApp({ Component, pageProps }) {
     </div>
   );
 }
+
+export default App;

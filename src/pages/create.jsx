@@ -10,15 +10,19 @@ import Message from '../components/Message';
 import Header from '../components/Header';
 import Controls from '../components/Controls';
 import Button from '../components/Button';
+import Modal from '../components/Modal';
 
-import { uploadImage } from '../utils/cloudinary';
+import { saveMeme } from '../utils/memes';
 
 function Homepage() {
   const [messages, setMessages] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isNaming, setIsNaming] = useState(false);
   const [isPublishing, setIsPublishing] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
+  const [title, setTitle] = useState('');
   const chatWindowRef = useRef(null);
+  const inputRef = useRef(null);
   const router = useRouter();
 
   async function createImage() {
@@ -48,18 +52,38 @@ function Homepage() {
     link.click();
   }
 
-  async function handlePublishClick() {
+  async function publish() {
     gtag('event', 'publish');
     setIsPublishing(true);
 
     const image = await createImage();
-    const { public_id: publicId } = await uploadImage(image);
+    const { slug } = await saveMeme({ image, title });
 
-    router.push(`/memes/${publicId}`);
+    setIsPublishing(false);
+
+    router.push(`/memes/${slug}`);
+  }
+
+  function handlePublishClick() {
+    setIsNaming(true);
   }
 
   function handleRemoveMessage(timestamp) {
     setMessages(messages.filter((message) => message.timestamp !== timestamp));
+  }
+
+  function handleModalClose() {
+    setIsNaming(false);
+  }
+
+  function handleTitleChange({ target }) {
+    setTitle(target.value);
+  }
+
+  function handleTitleConfirmation(event) {
+    event.preventDefault();
+    setIsNaming(false);
+    publish();
   }
 
   return (
@@ -68,6 +92,19 @@ function Homepage() {
         <title>TeamsMemes | Microsoft Teams conversation generator</title>
         <meta name="description" content="Create your own Microsoft Teams conversation." />
       </Head>
+      <Modal open={isNaming} onClose={handleModalClose}>
+        <h2 className="mb-4 text-center text-gray-800 text-xl font-semibold">Name your creation...</h2>
+        <form onSubmit={handleTitleConfirmation} className="flex flex-col items-center">
+          <input
+            className="outline-none border-b bg-transparent pb-1 mb-6 w-64 text-teams-purple"
+            onChange={handleTitleChange}
+            placeholder="My Hillarious Masterpiece"
+            ref={inputRef}
+            type="text"
+          />
+          <Button text="Okay" disabled={!title} submit />
+        </form>
+      </Modal>
       <div className="max-w-md mx-auto">
         <h1 className="mb-8 text-center text-gray-800 text-xl font-semibold">Ready, steady, chat!</h1>
         <Header onSubmit={handleSubmit} />

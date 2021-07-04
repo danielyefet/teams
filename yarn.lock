@@ -160,6 +160,23 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
+"@prisma/client@^2.27.0":
+  version "2.27.0"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.27.0.tgz#17d98e64deea29063bee1778d85b5f7edeb14a26"
+  integrity sha512-Sh2b1M8MGbOHbwG1FEqdWTUCrEX3p7gt2e7gpaBWou8yTIJvP1UZ4YlHgpuUcR1q4pEIR/JTZJeQk2l4iDyRBQ==
+  dependencies:
+    "@prisma/engines-version" "2.27.0-43.cdba6ec525e0213cce26f8e4bb23cf556d1479bb"
+
+"@prisma/engines-version@2.27.0-43.cdba6ec525e0213cce26f8e4bb23cf556d1479bb":
+  version "2.27.0-43.cdba6ec525e0213cce26f8e4bb23cf556d1479bb"
+  resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-2.27.0-43.cdba6ec525e0213cce26f8e4bb23cf556d1479bb.tgz#60a34634fe26be9caca42556605a132e70810e3c"
+  integrity sha512-pwOsYdzw8+cwKlUrCzasiRh96RhNuJ/QcKr0HwjxxlUWTmbEayDKjqRRz5fsUYIpSv5fW1B3SsbzHOqVtFZ6XQ==
+
+"@prisma/engines@2.26.0-23.9b816b3aa13cc270074f172f30d6eda8a8ce867d":
+  version "2.26.0-23.9b816b3aa13cc270074f172f30d6eda8a8ce867d"
+  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-2.26.0-23.9b816b3aa13cc270074f172f30d6eda8a8ce867d.tgz#cfdacfad3acc0f3bf1d7710aa8f3852fd85ac6d9"
+  integrity sha512-a0jIhLvw9rFh6nZTr5Y3uzP28I2xNDu3pqxANvwMNnmIoYr1wYEcO1pMXn/36BGXldDdAWMmAbhfloHA3IB8DA==
+
 "@rushstack/eslint-patch@^1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.0.6.tgz#023d72a5c4531b4ce204528971700a78a85a0c50"
@@ -666,6 +683,11 @@ classnames@2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
+
+classnames@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
+  integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
 
 cli-cursor@^3.1.0:
   version "3.1.0"
@@ -2278,7 +2300,7 @@ mute-stream@0.0.8:
 
 nanoid@^3.1.22, nanoid@^3.1.23:
   version "3.1.23"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.23.tgz"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.23.tgz#f744086ce7c2bc47ee0a8472574d5c78e4183a81"
   integrity sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw==
 
 native-url@0.3.4:
@@ -2840,6 +2862,13 @@ pretty-hrtime@^1.0.3:
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz"
   integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
 
+prisma@2.26.0:
+  version "2.26.0"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.26.0.tgz#48f7b8fa166900ae20f2383da711ac8712a56b86"
+  integrity sha512-MXTQlF8X9mabkdTRb9x5nF6jvo1kT85d9hqIpYjLLZy+5tlvEaCaLBj+ok8GINdfYBS7gwQERZ9MHx0tb5dCdg==
+  dependencies:
+    "@prisma/engines" "2.26.0-23.9b816b3aa13cc270074f172f30d6eda8a8ce867d"
+
 process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
@@ -3270,6 +3299,11 @@ slice-ansi@^2.1.0:
     ansi-styles "^3.2.0"
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
+
+slugify@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.5.3.tgz#36e009864f5476bfd5db681222643d92339c890d"
+  integrity sha512-/HkjRdwPY3yHJReXu38NiusZw2+LLE2SrhkWJtmlPDB1fqFSvioYj62NkPcrKiNCgRLeGcGK7QBvr1iQwybeXw==
 
 source-map-js@^0.6.2:
   version "0.6.2"

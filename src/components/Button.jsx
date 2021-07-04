@@ -8,7 +8,7 @@ const Spinner = (
 );
 
 function Button({
-  className: additionalClasses = '', disabled = false, href, icon, loading = false, onClick = () => {}, target, text = '',
+  className: additionalClasses = '', disabled = false, href, icon, loading = false, onClick = () => {}, target, text = '', submit,
 }) {
   const className = `${additionalClasses ? `${additionalClasses} ` : ''}py-2 ${icon ? 'pl-2 pr-3' : 'px-3'} flex items-center bg-teams-purple hover:bg-teams-purple-light disabled:opacity-50 disabled:bg-teams-purple disabled:cursor-not-allowed inline-block text-white font-bold rounded shadow`;
 
@@ -22,7 +22,7 @@ function Button({
         className={className}
         disabled={disabled || loading}
         onClick={onClick}
-        type="button"
+        type={submit ? 'submit' : 'button'}
       >
         {!loading && icon && <span className="mr-1">{icon}</span>}
         {loading && Spinner}
