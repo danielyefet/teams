@@ -11,7 +11,7 @@ export async function saveMeme({ image, title }) {
   const meme = {
     title,
     image: `https://res.cloudinary.com/teamsmemes/image/upload/${publicId}.jpg`,
-    slug: slugify(`${title}-${nanoId()}`, { lower: true, remove: /[!#]/g }),
+    slug: slugify(`${title}-${nanoId()}`, { lower: true, remove: /[!#.]/g }),
   };
 
   await fetch('/api/memes', {

@@ -13,6 +13,9 @@ module.exports = {
     locales: ['en-gb'],
     defaultLocale: 'en-gb',
   },
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
   async rewrites() {
     return legacyMemes.map((legacyMeme) => ({
       source: `/memes/public/${legacyMeme}`,

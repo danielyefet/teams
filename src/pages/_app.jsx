@@ -1,5 +1,5 @@
 /* eslint-disable react/no-danger */
-import '../styles.scss';
+import 'tailwindcss/tailwind.css';
 
 import Head from 'next/head';
 import Link from 'next/link';

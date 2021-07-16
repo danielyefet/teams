@@ -4,27 +4,6 @@ import Head from 'next/head';
 import Input from '../../components/Input';
 import prisma from '../../utils/prisma';
 
-export async function getServerSideProps({ query }) {
-  const { slug } = query;
-  const result = await prisma.meme.findFirst({ where: { slug } });
-
-  if (!result) {
-    return {
-      notFound: true,
-    };
-  }
-
-  const { image, title } = result;
-
-  return {
-    props: {
-      image,
-      slug,
-      title,
-    },
-  };
-}
-
 function Meme({ image, slug, title }) {
   const inputRef = useRef(null);
   const [isCopied, setIsCopied] = useState(false);
@@ -111,6 +90,27 @@ function Meme({ image, slug, title }) {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps({ query }) {
+  const { slug } = query;
+  const result = await prisma.meme.findFirst({ where: { slug } });
+
+  if (!result) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const { image, title } = result;
+
+  return {
+    props: {
+      image,
+      slug,
+      title,
+    },
+  };
 }
 
 export default Meme;

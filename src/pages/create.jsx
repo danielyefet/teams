@@ -96,6 +96,7 @@ function Homepage() {
         <h2 className="mb-4 text-center text-gray-800 text-xl font-semibold">Name your creation...</h2>
         <form onSubmit={handleTitleConfirmation} className="flex flex-col items-center">
           <input
+            maxLength={100}
             className="outline-none border-b bg-transparent pb-1 mb-6 w-64 text-teams-purple"
             onChange={handleTitleChange}
             placeholder="My Hillarious Masterpiece"
