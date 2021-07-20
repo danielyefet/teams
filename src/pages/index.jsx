@@ -15,7 +15,7 @@ function Homepage({ memes }) {
         subtitle="Create something funny, share it and bask in the instant gratification"
       />
       <MemesGrid
-        title="Latest Creations"
+        title="Showcase"
         subtitle="Oh, the hilarity of it all!"
         memes={memes}
       />
@@ -27,6 +27,9 @@ export async function getStaticProps() {
   const memes = (
     await prisma.meme.findMany({
       take: 8,
+      where: {
+        isShowcased: true,
+      },
       orderBy: {
         createdAt: 'desc',
       },

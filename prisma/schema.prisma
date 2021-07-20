@@ -8,9 +8,10 @@ generator client {
 }
 
 model Meme {
-  id        Int       @default(autoincrement()) @id
-  createdAt DateTime  @default(now())
-  title     String
-  image     String
-  slug      String
+  id          Int       @default(autoincrement()) @id
+  createdAt   DateTime  @default(now())
+  title       String
+  image       String
+  slug        String
+  isShowcased Boolean   @default(false)
 }

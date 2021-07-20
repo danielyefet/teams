@@ -23,4 +23,12 @@ export async function saveMeme({ image, title }) {
   return meme;
 }
 
-export default { saveMeme };
+export async function updateMeme(meme) {
+  await fetch(`/api/memes/${meme.id}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'Application/JSON' },
+    body: JSON.stringify(meme),
+  });
+}
+
+export default { saveMeme, updateMeme };
