@@ -8,6 +8,8 @@ const nanoId = customAlphabet('abcdefghijklmnopqrstuvwxyz1234567890', 12);
 export async function saveMeme({ image, title }) {
   const { public_id: publicId } = await uploadImage(image);
 
+  if (!publicId) return {};
+
   const meme = {
     title,
     image: `https://res.cloudinary.com/teamsmemes/image/upload/${publicId}.jpg`,

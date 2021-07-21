@@ -21,6 +21,7 @@ function Homepage() {
   const [isPublishing, setIsPublishing] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
   const [title, setTitle] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const chatWindowRef = useRef(null);
   const inputRef = useRef(null);
   const router = useRouter();
@@ -55,13 +56,16 @@ function Homepage() {
   async function publish() {
     gtag('event', 'publish');
     setIsPublishing(true);
+    setErrorMessage('');
 
     const image = await createImage();
     const { slug } = await saveMeme({ image, title });
 
     setIsPublishing(false);
 
-    router.push(`/memes/${slug}`);
+    if (!slug) return setErrorMessage('Something\'s preventing me from publishing. Firewall maybe? Sorry! 😬');
+
+    return router.push(`/memes/${slug}`);
   }
 
   function handlePublishClick() {
@@ -167,6 +171,7 @@ function Homepage() {
             text="Publish"
           />
         </div>
+        {errorMessage && <p className="text-center text-red-500" dangerouslySetInnerHTML={{ __html: errorMessage }} />}
       </div>
     </>
   );

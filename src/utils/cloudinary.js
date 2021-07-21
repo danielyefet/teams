@@ -9,7 +9,13 @@ export async function uploadImage(image) {
   formData.append('folder', hostname === 'localhost' || hostname.includes('vercel') ? 'dev' : 'public');
   formData.append('file', image);
 
-  const response = await fetch(URL, { method: 'POST', body: formData });
+  let response = {};
+
+  try {
+    response = await fetch(URL, { method: 'POST', body: formData });
+  } catch (error) {
+    response.ok = false;
+  }
 
   return response.ok ? response.json() : {};
 }
