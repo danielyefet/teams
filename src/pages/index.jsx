@@ -7,7 +7,7 @@ function Homepage({ memes }) {
   return (
     <>
       <Head>
-        <title>TeamsMemes | Microsoft Teams chat meme creator</title>
+        <title>TeamsMemes - Microsoft Teams chat meme creator</title>
         <meta name="description" content="Fake Microsoft Teams chat generator" />
       </Head>
       <Hero
