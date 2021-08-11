@@ -2,7 +2,7 @@ const { MEME_WIDTH } = require('./src/constants');
 
 module.exports = {
   purge: {
-    content: ['./src/pages/**/*.jsx', './src/components/**/*.jsx'],
+    content: ['./src/pages/*.jsx', './src/pages/**/*.jsx', './src/components/*.jsx', './src/components/**/*.jsx'],
   },
   darkMode: false,
   theme: {
