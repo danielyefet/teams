@@ -14,6 +14,10 @@ function Homepage({ memes }) {
         title="The Internet&apos;s #1 Microsoft Teams chat generator"
         subtitle="Create something funny, share it and bask in the instant gratification"
       />
+      <section className="mt-12 sm:mt-16 p-8 text-center md:max-w-3/4 mx-auto">
+        <h1 className="text-gray-800 font-semibold text-2xl mb-3">What&apos;s TeamsMemes?</h1>
+        <p className="text-gray-500 text-sm">Great question! With TeamsMemes, you can create fake Microsoft Teams conversations that never happened in real life - think of the possibilities! Check out the showcase below for some inspiration.</p>
+      </section>
       <MemesGrid
         title="Showcase"
         subtitle="Oh, the hilarity of it all!"
