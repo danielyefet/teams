@@ -5,6 +5,7 @@ function RichFormat({ text }) {
   const jsx = [];
 
   const specialElements = specialStrings.map((specialString) => (
+    // eslint-disable-next-line react/jsx-key
     <span style={{ color: '#9797D3' }}>{specialString}</span>
   ));
 

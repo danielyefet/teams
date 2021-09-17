@@ -1,14 +1,17 @@
 import { useRef, useState } from 'react';
 import Head from 'next/head';
 
-import Input from '../../components/Input';
-import prisma from '../../utils/prisma';
+import Input from '../../../components/Input';
+import prisma from '../../../utils/prisma';
+import { isAdmin } from '../../../utils/request';
+import { updateMeme } from '../../../utils/memes';
 
-function MemePage({ meme }) {
-  const { image, slug, title } = meme;
+function MemePage({ meme, userIsAdmin }) {
+  const { image, slug, title, isShowcased: memeIsShowcased } = meme;
 
   const inputRef = useRef(null);
   const [isCopied, setIsCopied] = useState(false);
+  const [isShowcased, setIsShowcased] = useState(memeIsShowcased);
 
   const url = `https://www.teamsmemes.com/memes/${slug}`;
 
@@ -26,6 +29,11 @@ function MemePage({ meme }) {
     setTimeout(() => setIsCopied(false), 2000);
   }
 
+  function handleShowcaseChange({ target }) {
+    setIsShowcased(target.checked);
+    updateMeme({ ...meme, isShowcased: target.checked });
+  }
+
   return (
     <>
       <Head>
@@ -39,6 +47,17 @@ function MemePage({ meme }) {
         />
         <meta name="twitter:image" content={image} />
       </Head>
+      {userIsAdmin && (
+        <div className="flex justify-center items-center mb-2">
+          <input
+            className="mr-1"
+            type="checkbox"
+            checked={isShowcased}
+            onChange={handleShowcaseChange}
+          />
+          <p>Showcase</p>
+        </div>
+      )}
       <h1 className="mb-4 text-center text-gray-800 text-xl font-semibold">
         {title}
       </h1>
@@ -116,28 +135,28 @@ function MemePage({ meme }) {
   );
 }
 
-export async function getStaticProps({ params }) {
-  const { slug } = params;
+export async function getServerSideProps({ query, req }) {
+  if (!isAdmin(req)) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
 
+  const { slug } = query;
   const meme = await prisma.meme.findFirst({ where: { slug } });
 
-  if (!meme) return { notFound: true };
-
   meme.createdAt = meme.createdAt.toString();
+
+  if (!meme) return { notFound: true };
 
   return {
     props: {
       meme,
+      userIsAdmin: isAdmin(req),
     },
-  };
-}
-
-export async function getStaticPaths() {
-  const memes = await prisma.meme.findMany({ where: { isShowcased: true } });
-
-  return {
-    paths: memes.map((meme) => ({ params: { slug: meme.slug } })),
-    fallback: 'blocking',
   };
 }
 
