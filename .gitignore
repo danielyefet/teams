@@ -1,4 +1,4 @@
-.env
-.env.local
+.env*
 .next
+.vercel
 node_modules
