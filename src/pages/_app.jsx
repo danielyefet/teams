@@ -13,7 +13,6 @@ function App({ Component, pageProps }) {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <script data-ad-client="ca-pub-2755252801822945" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-65PXEVSDKT" />
         <script dangerouslySetInnerHTML={{
           __html: `
