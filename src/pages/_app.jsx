@@ -13,13 +13,13 @@ function App({ Component, pageProps }) {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-65PXEVSDKT" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5RM6H25PY" />
         <script dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){ dataLayer.push(arguments); }
             gtag('js', new Date());
-            gtag('config', 'G-65PXEVSDKT');
+            gtag('config', 'G-Z5RM6H25PY');
           `,
         }}
         />
