@@ -3,6 +3,7 @@ export default function Advert() {
     <a
       className="flex items-center justify-center"
       href="https://amzn.to/3X5PMiy"
+      onClick={() => gtag('event', 'banner_click')}
     >
       <iframe
         className="md:hidden"
