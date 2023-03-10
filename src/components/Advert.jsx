@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import banner from '../../public/banners/audible-new-year.png';
+import banner from '../../public/banners/audible.png';
 
 export default function Advert() {
   return (
