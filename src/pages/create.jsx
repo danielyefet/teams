@@ -118,7 +118,7 @@ function Homepage() {
             maxLength={100}
             className="outline-none border-b bg-transparent pb-1 mb-6 w-64 text-teams-purple"
             onChange={handleTitleChange}
-            placeholder="My Hillarious Masterpiece"
+            placeholder="My Hilarious Masterpiece"
             ref={inputRef}
             type="text"
           />
