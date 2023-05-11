@@ -30,7 +30,7 @@ export default function Advert() {
       <div className="grid grid-cols-2 gap-6 max-w-sm mx-auto sm:gap-8">
         <Product
           link={
-            'https://www.redbubble.com/i/mug/coffee-Teams-mug-by-hackerwear/145409316.9Q0AD?asc=u'
+            'https://www.redbubble.com/i/mug/Teams-coffee-by-hackerwear/145409316.9Q0AD?asc=u'
           }
           onClick={() =>
             gtag('event', 'product_click', {
