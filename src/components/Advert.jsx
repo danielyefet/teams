@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import darkMug from '../../public/products/mug-lifestyle-dark-mode.jpeg';
-import lightMug from '../../public/products/mug-lifestyle-light-mode.jpeg';
+import darkMug from '../../public/products/classic-mug-dark-mode.jpg';
+import lightMug from '../../public/products/classic-mug-light-mode.jpg';
 
 function Product({ image, link, description, onClick = () => {} }) {
   return (
     <a onClick={onClick} href={link}>
-      <div className="bg-gray-100 cursor-pointer rounded border relative p-2 group">
+      <div className="bg-gray-100 cursor-pointer rounded border relative p-1 group">
         <Image src={image} alt={description} />
         <div className="flex w-full justify-center">
           <button className="w-full py-2 group-hover:bg-teams-purple-light bg-teams-purple text-white rounded-sm">
@@ -20,7 +20,7 @@ function Product({ image, link, description, onClick = () => {} }) {
 export default function Advert() {
   return (
     <section className="p-2">
-      <h1 className="text-gray-900 text-xl font-light tracking-tight mb-1">
+      <h1 className="text-gray-900 text-xl tracking-tight mb-1">
         Upgrade your coffee game!
       </h1>
       <p className="text-gray-800 font-extralight text-sm mb-6">
@@ -30,7 +30,7 @@ export default function Advert() {
       <div className="grid grid-cols-2 gap-6 max-w-sm mx-auto sm:gap-8">
         <Product
           link={
-            'https://www.redbubble.com/i/mug/Teams-mug-coffee-by-hackerwear/145315400.9Q0AD'
+            'https://www.redbubble.com/i/mug/coffee-Teams-mug-by-hackerwear/145409316.9Q0AD?asc=u'
           }
           onClick={() =>
             gtag('event', 'product_click', {
@@ -42,7 +42,7 @@ export default function Advert() {
         />
         <Product
           link={
-            'https://www.redbubble.com/i/mug/Teams-chat-coffee-by-hackerwear/145315129.9Q0AD'
+            'https://www.redbubble.com/i/mug/Team-coffee-Dark-mode-by-hackerwear/145409166.9Q0AD?asc=u'
           }
           onClick={() =>
             gtag('event', 'product_click', {
