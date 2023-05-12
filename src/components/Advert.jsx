@@ -5,9 +5,9 @@ import lightMug from '../../public/products/classic-mug-light-mode.jpg';
 function Product({ image, link, description, onClick = () => {} }) {
   return (
     <a onClick={onClick} href={link}>
-      <div className="bg-gray-100 cursor-pointer rounded border relative p-1 group">
+      <div className="bg-gray-100 cursor-pointer overflow-hidden flex rounded border flex-col relative group">
         <Image src={image} alt={description} />
-        <div className="flex w-full justify-center">
+        <div className="flex w-full justify-center p-2">
           <button className="w-full py-2 group-hover:bg-teams-purple-light bg-teams-purple text-white rounded-sm">
             Shop now
           </button>
@@ -42,7 +42,7 @@ export default function Advert() {
         />
         <Product
           link={
-            'https://www.redbubble.com/i/mug/Team-coffee-Dark-mode-by-hackerwear/145409166.9Q0AD?asc=u'
+            'https://www.redbubble.com/i/mug/Teams-coffee-Dark-mode-by-hackerwear/145409166.9Q0AD?asc=u'
           }
           onClick={() =>
             gtag('event', 'product_click', {
